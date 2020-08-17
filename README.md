@@ -1,6 +1,6 @@
 # PoliceGatherer
 Gathers news and events from the swedish police website from specified location.
-Later as desired you can use the push_Message(index) to push latest event from specified
+Later as desired you can use the ```push_Message(index)``` to push latest event from specified
 location in Sweden to your phone as a notification by the PushBullet app.
 
 ## Setup
