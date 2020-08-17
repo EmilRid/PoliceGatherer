@@ -18,4 +18,5 @@ location in Sweden to your phone as a notification by the PushBullet app.
 3. If you now want to get a notification on your phone of an event at specific index you need to call ```push_Message(index)```.
 4. Hopefully the event at the specified index will now be sent to your phone as a notification by the pushBullet app. 
 
-![Example Image](https://github.com/EmilRid/PoliceGatherer/blob/ReadMeSrc/ExampleCode.PNG?raw=true)
+
+https://github.com/EmilRid/PoliceGatherer/blob/master/ReadMeSrc/ExampleCode.PNG
