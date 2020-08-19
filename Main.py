@@ -21,8 +21,21 @@ def push_Message(index):
     title = gatherer.getEvents()[index].title + ", " + gatherer.getEvents()[index].location
     body = str(gatherer.getEvents()[index].date) + "\n" + gatherer.getEvents()[index].text
     pushbullet_message(title, body)
+
+# function to check if latest event is at different time than stored latest
+def pushIfNew():
+    gatherer.updateEvents()
+    latest = open("latest.txt", "r+")
+    txtLatest = latest.readline()
+    gathLatest = str(gatherer.getEvents()[0].date)
     
+    if txtLatest != gathLatest:
+        print("True")
+        latest.seek(0)
+        latest.write(gathLatest)
+        push_Message(0)
+    latest.close()
+
 #Gatherer object with Stockholm specified 
 gatherer = Gatherer("https://polisen.se/aktuellt/polisens-nyheter?requestId=0&lpfm.loc=Stockholm")
 
-push_Message(0)
