@@ -26,6 +26,7 @@ class Event:  # Event class used by Gatherer class
 class Gatherer:  # class that creates objects which can request new event information
     def __init__(self, source):
 
+        self.source = source
         self.page = requests.get(source)  # the raw page from request
         self.soup = bs4.BeautifulSoup(self.page.content, "html.parser") # processed page
         self.events = []  # list containing the events gathered from the internet

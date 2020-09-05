@@ -1,11 +1,12 @@
-from Gatherer import Gatherer
+from PoliceGatherer import Gatherer
 import requests
 import json
+
+TOKEN = ''
 
 # pushbullet function
 def pushbullet_message(title, body):
     msg = {"type": "note", "title": title, "body": body}
-    TOKEN = ''
     resp = requests.post('https://api.pushbullet.com/v2/pushes', 
                          data=json.dumps(msg),
                          headers={'Authorization': 'Bearer ' + TOKEN,
@@ -35,7 +36,3 @@ def pushIfNew():
         latest.write(gathLatest)
         push_Message(0)
     latest.close()
-
-#Gatherer object with Stockholm specified 
-gatherer = Gatherer("https://polisen.se/aktuellt/polisens-nyheter?requestId=0&lpfm.loc=Stockholm")
-
